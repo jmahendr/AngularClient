@@ -1,12 +1,20 @@
-<div class="row" ng-repeat="med in userMedications">
-	<div class="col-xs-12 col-sm-2">
-        <b>{{med.name}}</b> {{med.strength}} {{med.strengthUnit}}
+<div >
+<div>
+	<ul class="nav nav-tabs">
+		<li ng-class="{active:isSelected('home')}"><a ng-click="selectTab('home')">Home</a></li>
+		<li ng-class="{active: isSelected('update')}"><a ng-click="selectTab('update')">Update</a></li>
+		<li ng-class="{active: isSelected('settings')}"><a ng-click="selectTab('settings')">Settings</a></li>
+		<li ng-class="{active: isSelected('history')}"><a ng-click="selectTab('history')">History</a></li>
+	</ul>
+</div>
+
+
+
+<div ng-switch="selection.selected">
+	<div ng-switch-when="home">
+		<div ng-include="'views/medHome.html'"></div>
 	</div>
-	<div class="col-xs-12 col-sm-4">
-		{{med.schedule}}
-	</div>
-	<div class="col-xs-12 col-sm-6">
-        
-      <span style="color: {{med.colour}};">{{med.shape}}</span>
-	</div>
+	<div ng-switch-when="update"><h1>update! from ng-switch</h1></div>
+	<div ng-switch-when="settings"><h1>settings! from ng-switch</h1></div>
+</div>
 </div>

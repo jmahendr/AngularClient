@@ -1,0 +1,13 @@
+<div class="row" ng-repeat="med in userMedications">
+	<div class="col-xs-12 col-sm-2">
+		{{med.type}} <b>{{med.name}}</b> {{med.strength}} {{med.strengthUnit}}
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		{{med.schedule}}
+	</div>
+	<div class="col-xs-12 col-sm-6">
+
+	  <span style="color: {{med.colour}};">{{med.shape}}</span>
+		Selected tab is {{selection.selected}}!
+	</div>
+</div>
