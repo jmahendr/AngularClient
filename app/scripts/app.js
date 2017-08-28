@@ -39,7 +39,7 @@ angular.module('mediApp', ['ui.router', 'ngResource'])
                 views: {
                     'content@': {
                         templateUrl : 'views/medication.html',
-                        controller  : 'AboutCtrl'
+                        controller  : 'MedicationCtrl'
                     }
 				}
             });
