@@ -5,8 +5,8 @@ angular.module('mediApp')
 
 	.service('userService', ['$resource', 'baseURL', function($resource, baseURL){
 		this.getUserDrugs = function() {
-            return $resource(baseURL+'userDrugs/:id'
-                            , null, {'update':{method:'PUT'}});
+            return $resource(baseURL+'userDrugs/:id',
+                            null, {'update':{method:'PUT'}});
         };
 	}])
 ;
