@@ -1,7 +1,7 @@
     <!-- Add your site or application content here -->
     <div class="header container">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-       
+
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,14 +21,25 @@
               <li><a ui-sref="app.aboutus" data-toggle="collapse" data-target=".navbar-collapse.in">About</a></li>
               <li><a ui-sref="app.contactus" data-toggle="collapse" data-target=".navbar-collapse.in">Contact</a></li>
             </ul>
-			  
+            <ul class="nav navbar-nav navbar-right">
+              <li ng-if="!loggedIn"><a ng-click="openLogin()">
+                <span class="glyphicon glyphicon-log-in"></span> Login</a>
+              </li>
+              <li ng-if="loggedIn">
+                <a>{{username}}</a>
+              </li>
+              <li ng-if="loggedIn">
+                <a ng-click="logOut()">
+                <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+              </li>
+            </ul>
           </div>
-       
+
       </div>
     </div>
 
 	<div class="jumbotron">
-        <h1>Pill Reminder</h1> 
+        <h1>Pill Reminder</h1>
 	  <p>App that reminds you to take your medication at the right time.</p>
 	  <a class="btn btn-warning" href="#" role="button">Download App Now</a>
 	</div>
